@@ -5,7 +5,7 @@
 (defn get-links-1 [container]
   (cond (and (vector? container) (= (first container) :h3))
         (get (get (get container 2) 1) :href)
-        (or (vector? container) (map? container) (list? container))
+        (vector? container)
         (flatten (filter #(not (or (nil? %) (empty? %))) (map #(get-links-1 %) container)))
         :else nil))
 
