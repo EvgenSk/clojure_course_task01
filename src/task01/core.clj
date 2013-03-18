@@ -13,7 +13,5 @@
   (let [data (parse "clojure_google.html")]
     (get-links-1 data)))
 
-(get-links)
-
 (defn -main []
   (println (str "Found " (count (get-links)) " links!")))
